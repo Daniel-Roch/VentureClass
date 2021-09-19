@@ -1,0 +1,20 @@
+{
+  "name": "node-react",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run dev",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "client": "cd venture-class && npm start",
+    "server": "node src/server.js",
+    "dev": "concurrently --kill-others-on-fail \"nodemon src/server.js\" \"npm run client\"",
+    "devNode": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^2.0.12"
+  }
+}
