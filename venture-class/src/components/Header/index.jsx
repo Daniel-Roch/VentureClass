@@ -21,6 +21,7 @@ const TitleHeader = styled.p`
     font-weight: normal;
     font-size: 16px;
     color: #FFFFFF;
+    
 `
 export const SairApp = styled.p`
 
@@ -31,6 +32,12 @@ export const SairApp = styled.p`
     line-height: 18px;
 
     color: #FFFFFF;
+    :hover{
+        box-shadow: 0px 1px #F89B29;
+    }
+`
+export const ImgSair = styled.img`
+    height: 14px;
 `
 
 export default function Header() {
@@ -39,7 +46,7 @@ export default function Header() {
     return (
         <DivHeader>
             <TitleHeader><Link to="/">Venture<span style={{color: '#F89B29'}}>Class</span></Link></TitleHeader>
-            {id != undefined && <SairApp><Link to="/">Sair do app <img style={{height:'20px'}} src={SairImg}/></Link></SairApp>}
+            {id && <SairApp><Link to="/">Sair do app <ImgSair src={SairImg}/></Link></SairApp>}
         </DivHeader>
     )
 }
